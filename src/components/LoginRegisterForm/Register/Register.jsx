@@ -10,6 +10,9 @@ function Register() {
         <TelegramLogo />
       </div>
       <h1 className='login-form-title'>Sign up to Celegram</h1>
+      <Link to='/' style={{ textDecoration: 'none' }}>
+        Log in
+      </Link>
       <Input type='text' label='Name' />
       <Input type='text' label='Surname' />
       <Input type='text' label='Username' />
@@ -17,7 +20,6 @@ function Register() {
       <Input type='password' label='Password' />
       <Input type='password' label='Repeat password' />
       <button className='login-btn'>Confirm</button>
-      <Link to='/'>Log in</Link>
     </div>
   );
 }

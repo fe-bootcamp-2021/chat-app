@@ -11,11 +11,11 @@ function Login() {
         <TelegramLogo />
       </div>
       <h1 className='login-form-title'>Sign in to Celegram</h1>
+      <Link to='/register' style={{textDecoration: 'none'}}>Create Account</Link>
       <p>Please confirm your username and enter your password.</p>
       <Input type='text' label='Username' />
       <Input type='password' label='Password' />
       <button className='login-btn'>Confirm</button>
-      <Link to='/register'>Create Account</Link>
     </div>
   );
 }
