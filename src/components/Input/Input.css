@@ -28,6 +28,18 @@
   font-weight: var(--thickness-medium);
 }
 
+.input:focus ~ label,
+.input:valid ~ label,
+.input:not(:empty) ~ label,
+.input:disabled ~ label {
+  font-size: 12px;
+  top: 2%;
+  background: var(--white-color);
+  padding: 2px;
+  color: var(--main-color);
+  font-weight: var(--thickness-medium);
+}
+
 .input:focus {
   border: 1px solid var(--main-color);
 }
