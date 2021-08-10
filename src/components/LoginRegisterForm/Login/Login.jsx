@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.css';
 import { TelegramLogo } from '../../../img/icons';
 import Input from '../../Input/Input';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -14,7 +15,7 @@ function Login() {
       <Input type='text' label='Username' />
       <Input type='password' label='Password' />
       <button className='login-btn'>Confirm</button>
-      <a>Create Account</a>
+      <Link to='/register'>Create Account</Link>
     </div>
   );
 }

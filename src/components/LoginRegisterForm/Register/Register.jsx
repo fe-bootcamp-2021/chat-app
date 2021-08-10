@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TelegramLogo } from '../../../img/icons';
 import Input from '../../Input/Input';
 
@@ -16,7 +17,7 @@ function Register() {
       <Input type='password' label='Password' />
       <Input type='password' label='Repeat password' />
       <button className='login-btn'>Confirm</button>
-      <a>Log in</a>
+      <Link to='/'>Log in</Link>
     </div>
   );
 }
