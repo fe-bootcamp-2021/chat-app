@@ -1,0 +1,29 @@
+.formContainer {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  margin-top: 30px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.login-form-title {
+  margin: 20px 0 10px 0;
+}
+
+.login-btn {
+  border-radius: 25px;
+  background: var(--main-color);
+  color: var(--white-color);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: var(--size-base);
+  margin-top: 15px;
+  width: 210px;
+}
