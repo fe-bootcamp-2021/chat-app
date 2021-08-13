@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TelegramLogo } from '../../../img/icons';
-import Input from '../../Input/Input';
+import { TelegramLogo } from '../../img/icons';
+import Input from '../Input/Input';
 
 function Register() {
   return (

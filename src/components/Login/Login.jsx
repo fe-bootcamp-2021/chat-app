@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
-import { TelegramLogo } from '../../../img/icons';
-import Input from '../../Input/Input';
+import { TelegramLogo } from '../../img/icons';
+import Input from '../Input/Input';
 import { Link } from 'react-router-dom';
 
 function Login() {
