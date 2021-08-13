@@ -1,4 +1,4 @@
-.input-field {
+.inputField {
   position: relative;
   margin-top: 15px;
 }
@@ -10,7 +10,7 @@
   outline: none;
 }
 
-.input-banner {
+.inputBanner {
   position: absolute;
   left: 0;
   top: 50%;

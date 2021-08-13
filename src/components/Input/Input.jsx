@@ -1,11 +1,22 @@
-import React from 'react';
-import './Input.css';
+import React from "react";
+import classes from "./Input.module.css";
 
-function Input({ type, label }) {
+
+function Input({ id, name, type, onChange, onBlur, value, label,autoFocus}) {
   return (
-    <div className='input-field'>
-      <input type={type} className='input' required />
-      <label className='input-banner'>
+    <div className={classes.inputField}>
+      <input
+        id={id}
+        name={name}
+        type={type}
+        onChange={onChange}
+        onBlur={onBlur}
+        value={value}
+        className={classes.input}
+        required
+        autoFocus={autoFocus}
+      />
+      <label className={classes.inputBanner}>
         <span>{label}</span>
       </label>
     </div>
