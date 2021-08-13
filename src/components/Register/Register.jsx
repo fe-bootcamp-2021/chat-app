@@ -10,7 +10,7 @@ function Register() {
         <TelegramLogo />
       </div>
       <h1 className='login-form-title'>Sign up to Celegram</h1>
-      <Link to='/' style={{ textDecoration: 'none' }}>
+      <Link to='/'>
         Log in
       </Link>
       <Input type='text' label='Name' />
