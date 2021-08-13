@@ -1,7 +1,7 @@
 import React from 'react';
-import './LoginRegisterForm.css';
-import Login from './Login/Login';
-import Register from './Register/Register';
+import './Auth.css';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function LoginRegisterForm() {

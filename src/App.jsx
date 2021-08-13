@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import './root.css';
-import LoginRegisterForm from './components/LoginRegisterForm/LoginRegisterForm';
+import LoginRegisterForm from './components/Auth/Auth';
 
 function App() {
   return (
