@@ -1,32 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import Input from "../Input/Input";
-import { TelegramLogo } from "../Icons/icons";
-import classes from "./Login.module.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Input from '../Input/Input';
+import { TelegramLogo } from '../Icons/icons';
+import classes from './Login.module.css';
+import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
 
 export default function LoginForm() {
   const formik = useFormik({
     initialValues: {
-      username: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validationSchema: Yup.object({
-      username: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Username is required")
-        .min(4, "Username must contain at least 4 characters"),
+      email: Yup.string().email('Enter a valid email').required('Email is required'),
       password: Yup.string()
-        .required("Password is required")
+        .required('Password is required')
         .matches(
           /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-          "Password must contain at least 8 characters, one uppercase, one number and one special case character"
+          'Password must contain at least 8 characters, one uppercase, one number and one special case character'
         ),
     }),
 
     onSubmit: (values) => {},
   });
+
+  const handleClick = () => {
+    signInWithEmailAndPassword(formik.values);
+  };
 
   return (
     <div className={classes.formContainer}>
@@ -34,37 +36,36 @@ export default function LoginForm() {
         <TelegramLogo />
       </div>
       <h1 className={classes.loginFormTitle}>Sign In to Telegram</h1>
-      <Link to="/register">Create Account</Link>
-      <p>Please confirm your username and enter your password.</p>
+      <Link to='/register'>Create Account</Link>
+      <p>Please confirm your email and enter your password.</p>
       <form onSubmit={formik.handleSubmit}>
         <Input
-          id="username"
-          name="username"
-          type="text"
+          id='email'
+          name='email'
+          type='email'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.username}
-          label="Username"
-          autoFocus
+          value={formik.values.email}
+          label='Email'
         />
-        {formik.touched.username && formik.errors.username ? (
-          <div className={classes.errorMessage}>{formik.errors.username}</div>
+        {formik.touched.email && formik.errors.email ? (
+          <div className={classes.errorMessage}>{formik.errors.email}</div>
         ) : null}
         <Input
-          id="password"
-          name="password"
-          type="password"
+          id='password'
+          name='password'
+          type='password'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
-          label="Password"
-          autocomplete=""
+          label='Password'
+          autocomplete=''
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <button type="submit" className={classes.loginBtn}>
+        <button type='submit' onClick={handleClick} className={classes.loginBtn}>
           Confirm
         </button>
       </form>
