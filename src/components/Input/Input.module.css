@@ -1,3 +1,7 @@
+label {
+  z-index: -1;
+}
+
 .inputField {
   position: relative;
   margin-top: 15px;
@@ -8,6 +12,7 @@
   padding: 15px;
   border-radius: 10px;
   outline: none;
+  background: transparent;
 }
 
 .inputBanner {
@@ -36,6 +41,7 @@
   padding: 2px;
   color: var(--main-color);
   font-weight: var(--thickness-medium);
+  z-index: 1;
 }
 .input:focus,
 .input:valid {
