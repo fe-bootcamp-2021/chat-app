@@ -12,6 +12,7 @@ function signInWithEmailAndPassword({ email, password }) {
     .catch((error) => {
       let errorCode = error.code;
       let errorMessage = error.message;
+      alert('Invalid email or password')
     });
 }
 
