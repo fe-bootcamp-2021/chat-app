@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Input from "../Input/Input";
+import Button from "../Button/Button";
 import { TelegramLogo } from "../Icons/icons";
 import classes from "./Register.module.css";
 import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword";
@@ -120,13 +121,7 @@ function Register() {
             {formik.errors.repeatPassword}
           </div>
         ) : null}
-        <button
-          type="submit"
-          onClick={handleClick}
-          className={classes.loginBtn}
-        >
-          Confirm
-        </button>
+        <Button type="submit" onClick={handleClick} btnName="Confirm" />
       </form>
     </div>
   );
