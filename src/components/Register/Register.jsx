@@ -1,12 +1,14 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import { TelegramLogo } from "../Icons/icons";
-import classes from "./Register.module.css";
-import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+import { TelegramLogo } from '../Icons/icons';
+import signUpWithEmailAndPassword from '../../services/signUpWithEmailAndPassword';
+import { types } from '../../constants/types';
+import { routes } from '../../constants/routes';
+import classes from './Register.module.css';
 
 function Register() {
   let history = useHistory();
@@ -36,7 +38,10 @@ function Register() {
         .min(8, types.input.password.error.passMinLength),
       repeatPassword: Yup.string()
         .required(types.input.repeatPassword.error.repeatPassRequired)
-        .oneOf([Yup.ref(types.input.password.id), null], types.input.repeatPassword.error.passMustMatch),
+        .oneOf(
+          [Yup.ref(types.input.password.id), null],
+          types.input.repeatPassword.error.passMustMatch
+        ),
     }),
 
     onSubmit: (values) => {
@@ -120,7 +125,7 @@ function Register() {
           <div className={classes.errorMessage}>{formik.errors.repeatPassword}</div>
         ) : null}
 
-        <Button type="submit" onClick={handleClick} btnName="Confirm" />
+        <Button type='submit' onClick={handleClick} btnName='Confirm' />
       </form>
     </div>
   );
