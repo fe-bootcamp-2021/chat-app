@@ -25,7 +25,7 @@ label {
 }
 
 .input:focus + label {
-  font-size: 12px;
+  font-size: var(--size-smallest);
   top: 2%;
   background: var(--white-color);
   padding: 2px;
@@ -35,7 +35,7 @@ label {
 
 .input:focus ~ label,
 .input:valid ~ label {
-  font-size: 12px;
+  font-size: var(--size-smallest);
   top: 2%;
   background: var(--white-color);
   padding: 2px;

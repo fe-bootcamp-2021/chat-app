@@ -1,26 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import Input from '../Input/Input';
-import { TelegramLogo } from '../Icons/icons';
-import classes from './Login.module.css';
-import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import Input from "../Input/Input";
+import { TelegramLogo } from "../Icons/icons";
+import classes from "./Login.module.css";
+import signInWithEmailAndPassword from "../../services/signInWithEmailAndPassword";
 
 export default function LoginForm() {
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email('Enter a valid email').required('Email is required'),
+      email: Yup.string()
+        .email("Enter a valid email")
+        .required("Email is required"),
       password: Yup.string()
-        .required('Password is required')
-        .matches(
-          /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-          'Password must contain at least 8 characters, one uppercase, one number and one special case character'
-        ),
+        .required("Password is required")
+        .min(8, "Password should be of minimum 8 characters length"),
     }),
 
     onSubmit: (values) => {},
@@ -36,36 +35,41 @@ export default function LoginForm() {
         <TelegramLogo />
       </div>
       <h1 className={classes.loginFormTitle}>Sign In to Telegram</h1>
-      <Link to='/register'>Create Account</Link>
+      <Link to="/register">Create Account</Link>
       <p>Please confirm your email and enter your password.</p>
       <form onSubmit={formik.handleSubmit}>
         <Input
-          id='email'
-          name='email'
-          type='email'
+          id="email"
+          name="email"
+          type="email"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
-          label='Email'
+          label="Email"
+          autoFocus
         />
         {formik.touched.email && formik.errors.email ? (
           <div className={classes.errorMessage}>{formik.errors.email}</div>
         ) : null}
         <Input
-          id='password'
-          name='password'
-          type='password'
+          id="password"
+          name="password"
+          type="password"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
-          label='Password'
-          autocomplete=''
+          label="Password"
+          autocomplete=""
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <button type='submit' onClick={handleClick} className={classes.loginBtn}>
+        <button
+          type="submit"
+          onClick={handleClick}
+          className={classes.loginBtn}
+        >
           Confirm
         </button>
       </form>
