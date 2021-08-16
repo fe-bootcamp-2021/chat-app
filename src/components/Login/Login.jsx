@@ -1,15 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import { TelegramLogo } from "../Icons/icons";
-import signInWithEmailAndPassword from "../../services/signInWithEmailAndPassword";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+import { TelegramLogo } from '../Icons/icons';
+import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
 import { types } from '../../constants/types';
 import { routes } from '../../constants/routes';
-import classes from "./Login.module.css";
-
+import classes from './Login.module.css';
 
 export default function LoginForm() {
   const formik = useFormik({
@@ -62,14 +61,14 @@ export default function LoginForm() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
-          label={types.input.password.password}
+          label={types.input.password.label}
           autocomplete=''
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <Button type="submit" btnName="Confirm" onClick={handleClick} />
+        <Button type={types.button.type} btnName={types.button.name} onClick={handleClick} />
       </form>
     </div>
   );
