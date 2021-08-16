@@ -92,6 +92,8 @@ pre {
 
 a {
   background-color: transparent;
+  text-decoration: none;
+  border-bottom: 1px solid grey;
 }
 
 /**

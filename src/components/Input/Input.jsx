@@ -1,0 +1,37 @@
+import React from "react";
+import PropTypes from "prop-types";
+import classes from "./Input.module.css";
+
+function Input({ id, name, type, onChange, onBlur, value, label, autoFocus }) {
+  return (
+    <div className={classes.inputField}>
+      <input
+        id={id}
+        name={name}
+        type={type}
+        onChange={onChange}
+        onBlur={onBlur}
+        value={value}
+        className={classes.input}
+        required
+        autoFocus={autoFocus}
+      />
+      <label className={classes.inputBanner}>
+        <span>{label}</span>
+      </label>
+    </div>
+  );
+}
+
+export default Input;
+
+Input.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  autoFocus: PropTypes.bool,
+};
