@@ -11,16 +11,16 @@ import classes from "./Login.module.css";
 export default function LoginForm() {
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        .email("Enter a valid email")
-        .required("Email is required"),
+        .email(types.input.email.error.validEmail)
+        .required(types.input.email.error.emailRequired),
       password: Yup.string()
-        .required("Password is required")
-        .min(8, "Password should be of minimum 8 characters length"),
+        .required(types.input.password.error.passRequired)
+        .min(8, types.input.password.error.passMinLength),
     }),
 
     onSubmit: (values) => {},
@@ -36,31 +36,31 @@ export default function LoginForm() {
         <TelegramLogo />
       </div>
       <h1 className={classes.loginFormTitle}>Sign In to Telegram</h1>
-      <Link to="/register">Create Account</Link>
+      <Link to={routes.register.url}>Create Account</Link>
       <p>Please confirm your email and enter your password.</p>
       <form onSubmit={formik.handleSubmit}>
         <Input
-          id="email"
-          name="email"
-          type="email"
+          id={types.input.email.id}
+          name={types.input.email.name}
+          type={types.input.email.type}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
-          label="Email"
+          label={types.input.email.label}
           autoFocus
         />
         {formik.touched.email && formik.errors.email ? (
           <div className={classes.errorMessage}>{formik.errors.email}</div>
         ) : null}
         <Input
-          id="password"
-          name="password"
-          type="password"
+          id={types.input.password.id}
+          name={types.input.password.name}
+          type={types.input.password.type}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
-          label="Password"
-          autocomplete=""
+          label={types.input.password.password}
+          autocomplete=''
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
