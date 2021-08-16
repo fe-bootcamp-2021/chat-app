@@ -30,9 +30,9 @@
   }
   
   .errorMessage {
-    width: 30%;
-    margin: 5px 35%;
+    width: 180px;
+    margin: 5px auto;
     color: var(--error-color);
-    font-size: 11px;
+    font-size: var(--size-micro);
     font-style: italic;
   }
