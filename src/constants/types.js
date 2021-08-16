@@ -57,4 +57,8 @@ export const types = {
       },
     },
   },
+  button: {
+    type: 'submit',
+    name: 'Confirm',
+  }
 };

@@ -125,7 +125,7 @@ function Register() {
           <div className={classes.errorMessage}>{formik.errors.repeatPassword}</div>
         ) : null}
 
-        <Button type='submit' onClick={handleClick} btnName='Confirm' />
+        <Button type={types.button.type} onClick={handleClick} btnName={types.button.name} />
       </form>
     </div>
   );
