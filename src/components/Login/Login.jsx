@@ -1,13 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import Input from '../Input/Input';
-import { TelegramLogo } from '../Icons/icons';
-import classes from './Login.module.css';
-import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
-import { routes } from '../../constants/routes';
-import { types } from '../../constants/types';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import { TelegramLogo } from "../Icons/icons";
+import signInWithEmailAndPassword from "../../services/signInWithEmailAndPassword";
+import classes from "./Login.module.css";
 
 export default function LoginForm() {
   const formik = useFormik({
@@ -67,9 +66,7 @@ export default function LoginForm() {
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <button type='submit' onClick={handleClick} className={classes.loginBtn}>
-          Confirm
-        </button>
+        <Button type="submit" btnName="Confirm" onClick={handleClick} />
       </form>
     </div>
   );
