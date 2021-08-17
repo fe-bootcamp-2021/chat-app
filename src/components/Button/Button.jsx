@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classes from "./Button.module.css";
 
-function Button({ type, btnName, onClick }) {
+function Button({ type, btnName, onClick, className }) {
   return (
-    <button type={type} onClick={onClick} className={classes.loginBtn}>
+    <button type={type} onClick={onClick} className={className}>
       {btnName}
     </button>
   );
@@ -14,6 +13,6 @@ export default Button;
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,
-  btnName: PropTypes.string.isRequired,
+  btnName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   onClick: PropTypes.func.isRequired,
 };
