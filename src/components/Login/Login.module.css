@@ -8,6 +8,19 @@
   text-align: center;
 }
 
+.loginBtn {
+  border-radius: 25px;
+  background: var(--main-color);
+  color: var(--white-color);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: var(--size-base);
+  margin-top: 15px;
+  width: 210px;
+  cursor: pointer;
+}
+
 .logo {
   max-width: 200px;
 }
@@ -17,7 +30,7 @@
 }
 
 .errorMessage {
-  width:180px;
+  width: 180px;
   margin: 5px auto;
   color: var(--error-color);
   font-size: var(--size-smallest);

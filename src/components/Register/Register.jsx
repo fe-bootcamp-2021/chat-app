@@ -1,25 +1,25 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import { TelegramLogo } from '../Icons/icons';
-import signUpWithEmailAndPassword from '../../services/signUpWithEmailAndPassword';
-import { types } from '../../constants/types';
-import { routes } from '../../constants/routes';
-import classes from './Register.module.css';
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import { TelegramLogo } from "../Icons/icons";
+import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword";
+import { types } from "../../constants/types";
+import { routes } from "../../constants/routes";
+import classes from "./Register.module.css";
 
 function Register() {
   let history = useHistory();
 
   const formik = useFormik({
     initialValues: {
-      name: '',
-      surname: '',
-      email: '',
-      password: '',
-      repeatPassword: '',
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+      repeatPassword: "",
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -69,6 +69,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.name}
           label={types.input.name.label}
+          className={classes.loginBtn}
           autoFocus
         />
         {formik.touched.name && formik.errors.name ? (
@@ -106,7 +107,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.password}
           label={types.input.password.label}
-          autocomplete=''
+          autocomplete=""
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
@@ -119,13 +120,20 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.repeatPassword}
           label={types.input.repeatPassword.label}
-          autocomplete=''
+          autocomplete=""
         />
         {formik.touched.repeatPassword && formik.errors.repeatPassword ? (
-          <div className={classes.errorMessage}>{formik.errors.repeatPassword}</div>
+          <div className={classes.errorMessage}>
+            {formik.errors.repeatPassword}
+          </div>
         ) : null}
 
-        <Button type={types.button.type} onClick={handleClick} btnName={types.button.name} />
+        <Button
+          type={types.button.type}
+          onClick={handleClick}
+          btnName={types.button.name}
+          className={classes.loginBtn}
+        />
       </form>
     </div>
   );
