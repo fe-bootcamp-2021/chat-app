@@ -13,7 +13,7 @@ export default function NewChatMenu() {
   };
 
   return (
-    <div style={{ position: "absolute", bottom: "0", right: "0" }}>
+    <div className={classes.wrapper}>
       <div className={cn([classes.container], { [classes.hide]: !isVisible })}>
         <div className={classes.NewChatMenuRow}>
           <div className={classes.iconSpeaker}>

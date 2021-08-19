@@ -7,12 +7,12 @@ import classes from "./Sidebar.module.css";
 
 function Sidebar() {
   return (
-    <div className={classes.sidebar}>
-      <div className={classes.sidebar__header}>
+    <div className={classes.Sidebar}>
+      <div className={classes.sidebarHeader}>
         <BurgerMenu />
         <Search />
       </div>
-      <div className="sidebar__content" style={{ paddingTop: "60px" }}>
+      <div className={classes.sidebarContent}>
         <ToChatMenu />
         <ToChatMenu />
         <ToChatMenu />

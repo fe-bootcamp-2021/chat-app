@@ -1,3 +1,9 @@
+.wrapper {
+  position: "absolute";
+  bottom: "0";
+  right: "0";
+}
+
 .container {
   position: absolute;
   width: 230px;
