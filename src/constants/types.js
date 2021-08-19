@@ -1,5 +1,12 @@
 export const types = {
   input: {
+    search: {
+      type: 'search',
+      id: 'search',
+      label: 'Search',
+      name: 'Search...',
+    },
+
     password: {
       name: 'password',
       type: 'password',
@@ -60,5 +67,5 @@ export const types = {
   button: {
     type: 'submit',
     name: 'Confirm',
-  }
+  },
 };
