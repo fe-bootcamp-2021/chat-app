@@ -1,13 +1,15 @@
 .search {
+  width: 100%;
   background: transparent;
   border: 1px solid var(--muteGrey-color);
-  border-radius: 15px;
+  border-color: #2f2f2f;
+  border-radius: 30px;
   padding: 10px;
   outline: none;
   color: #fff;
   font-weight: var(--thickness-medium);
   text-indent: 30px;
-  width: 100%;
+  transition: 0.3s;
 }
 
 .searchBox {

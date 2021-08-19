@@ -4,7 +4,7 @@ export const types = {
       type: 'search',
       id: 'search',
       label: 'Search',
-      name: 'Search...',
+      name: 'Search',
     },
 
     password: {

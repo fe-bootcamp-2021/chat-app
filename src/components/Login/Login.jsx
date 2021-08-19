@@ -8,7 +8,6 @@ import { TelegramLogo } from "../Icons/icons";
 import signInWithEmailAndPassword from "../../services/signInWithEmailAndPassword";
 import { types } from "../../constants/types";
 import { routes } from "../../constants/routes";
-import NewChatMenu from "../NewChatMenu/NewChatMenu";
 import classes from "./Login.module.css";
 
 export default function LoginForm() {
@@ -38,7 +37,6 @@ export default function LoginForm() {
       <div className={classes.logo}>
         <TelegramLogo />
       </div>
-      <NewChatMenu />
       <h1 className={classes.loginFormTitle}>Sign In to Telegram</h1>
       <Link to={routes.register.url}>Create Account</Link>
       <p>Please confirm your email and enter your password.</p>
