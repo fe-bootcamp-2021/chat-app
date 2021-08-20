@@ -11,7 +11,7 @@
 }
 
 .circle:hover {
-  background: #2b2b2b;
+  background: var(--hover-bg-color);
 }
 
 .menuIcon {
