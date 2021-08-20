@@ -5,6 +5,11 @@
   margin-right: 1px;
   background: var(--darkGrey-color);
   position: relative;
+  overflow-y: scroll;
+}
+
+.Sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebarHeader {

@@ -24,6 +24,7 @@
   height: 60px;
   border-radius: 50%;
   border: transparent;
+  background: #fff;
 }
 
 .userCaption {
@@ -70,3 +71,4 @@ p {
 input[type="search"]:hover {
   border: 1px solid #707579;
 }
+

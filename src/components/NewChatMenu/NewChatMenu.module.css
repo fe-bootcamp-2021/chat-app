@@ -1,5 +1,5 @@
 .wrapper {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   right: 0;
 }
@@ -7,7 +7,7 @@
 .container {
   position: absolute;
   width: 230px;
-  left: -246px;
+  right: 15px;
   top: -272px;
   padding: 13px 0px;
   border-radius: 15px;
