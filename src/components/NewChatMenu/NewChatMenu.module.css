@@ -1,7 +1,7 @@
 .wrapper {
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  right: 0;
+  left: 29%;
 }
 
 .container {
@@ -14,9 +14,11 @@
   box-shadow: 0px 2px 8px 1px rgb(0 0 0 / 24%);
   background-color: var(--darkGrey-color);
 }
+
 .hide {
   display: none;
 }
+
 .NewChatMenuBtn {
   position: absolute;
   bottom: 15px;
