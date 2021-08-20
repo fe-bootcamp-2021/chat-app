@@ -1,9 +1,9 @@
-import React from "react";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
-import NewChatMenu from "../NewChatMenu/NewChatMenu";
-import Search from "../Search/Search";
-import ToChatMenu from "../ToChatMenu/ToChatMenu";
-import classes from "./Sidebar.module.css";
+import React from 'react';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import NewChatMenu from '../NewChatMenu/NewChatMenu';
+import Search from '../Search/Search';
+import ToChatMenu from '../ToChatMenu/ToChatMenu';
+import classes from './Sidebar.module.css';
 
 function Sidebar() {
   return (
@@ -20,8 +20,8 @@ function Sidebar() {
         <ToChatMenu />
         <ToChatMenu />
         <ToChatMenu />
-        <NewChatMenu />
       </div>
+      <NewChatMenu />
     </div>
   );
 }
