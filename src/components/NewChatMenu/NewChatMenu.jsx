@@ -13,7 +13,7 @@ export default function NewChatMenu() {
   };
 
   return (
-    <>
+    <div className={classes.wrapper}>
       <div className={cn([classes.container], { [classes.hide]: !isVisible })}>
         <div className={classes.NewChatMenuRow}>
           <div className={classes.iconSpeaker}>
@@ -40,6 +40,6 @@ export default function NewChatMenu() {
         className={classes.NewChatMenuBtn}
         type={types.button.type}
       />
-    </>
+    </div>
   );
 }
