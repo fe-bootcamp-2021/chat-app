@@ -1,3 +1,86 @@
 .container {
-  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  background-color: var(--darkGrey-color);
+  cursor: pointer;
+}
+
+.chatInfo {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+}
+
+.context {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+.top {
+  width: 40%;
+  height: 30px;
+  color: white;
+  font-size: var(--size-base);
+  font-weight: var(--thickness-semi-bold);
+}
+
+.bottom {
+  width: 60%;
+  height: 25px;
+  color: var(--message-color);
+  font-size: var(--size-small);
+}
+
+.chatUtils {
+  width: 10%;
+  display: flex;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--darkGrey-color);
+  transition: 0.2s;
+}
+
+.icon:hover > .iconHover {
+  background-color: var(--hover-bg-color);
+}
+
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
