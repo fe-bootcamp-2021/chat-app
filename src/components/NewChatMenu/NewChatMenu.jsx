@@ -16,9 +16,9 @@ export default function NewChatMenu() {
   return (
     <div className={classes.wrapper}>
       <div className={cn([classes.container], { [classes.hide]: !isVisible })}>
-        <NewChatMenuRow rowContent={<Speaker />} rowName={'New Channel'} />
-        <NewChatMenuRow rowContent={<Group />} rowName={'New Group'} />
-        <NewChatMenuRow rowContent={<User />} rowName={'New Private Chat'} />
+        <NewChatMenuRow rowContent={<Speaker />} rowName={'New Channel'} className={classes.text}/>
+        <NewChatMenuRow rowContent={<Group />} rowName={'New Group'} className={classes.text}/>
+        <NewChatMenuRow rowContent={<User />} rowName={'New Private Chat'} className={classes.text}/>
       </div>
       <Button
         btnName={isVisible ? <Close /> : <Pen />}

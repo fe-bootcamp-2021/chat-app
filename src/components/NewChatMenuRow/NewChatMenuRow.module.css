@@ -16,10 +16,3 @@
   padding-left: var(--size-base);
 }
 
-.text {
-  width: 80%;
-  color: white;
-  font-weight: var(--thickness-semi-bold);
-  text-align: left;
-  padding-left: var(--size-large-responsive);
-}

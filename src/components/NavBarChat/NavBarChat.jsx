@@ -1,5 +1,8 @@
 import React from "react";
-import { Search, DotMenu } from "../Icons/icons";
+import { types } from "../../constants/types";
+import Button from "../Button/Button";
+import { Search } from "../Icons/icons";
+import DotMenuChat from "../DotMenu/DotMenu";
 import classes from "./NavBarChat.module.css";
 
 function NavBarChat() {
@@ -23,15 +26,16 @@ function NavBarChat() {
       </div>
       <div className={classes.chatUtils}>
         <div className={classes.icon}>
-          <div className={classes.iconHover}>
-            <Search />
-          </div>
+          <Button
+            className={classes.iconHover}
+            type={types.button.type}
+            onClick={() => {
+              alert("Hi There!");
+            }}
+            btnName={<Search />}
+          />
         </div>
-        <div className={classes.icon}>
-          <div className={classes.iconHover}>
-            <DotMenu />
-          </div>
-        </div>
+        <DotMenuChat />
       </div>
     </div>
   );
