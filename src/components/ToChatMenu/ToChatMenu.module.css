@@ -44,13 +44,13 @@
 .userTitle {
   width: 70%;
   color: white;
-  font-size: var(--size-small);
+  font-size: var(--size-base);
   font-weight: var(--thickness-semi-bold);
 }
 
 .dialogTitleDetails {
   width: 30%;
-  color: #8a8a8a;
+  color: var(--message-color);
   font-size: var(--size-micro);
   padding-left: 25px;
 }
@@ -58,7 +58,7 @@
 .dialogSubTitle {
   width: 93%;
   height: 32px;
-  color: #8a8a8a;
+  color: var(--message-color);
   font-size: var(--size-small);
 }
 
@@ -71,4 +71,3 @@ p {
 input[type="search"]:hover {
   border: 1px solid #707579;
 }
-

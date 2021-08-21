@@ -1,9 +1,15 @@
-import React from 'react';
-import './Main.module.css';
-import Sidebar from '../Sidebar/Sidebar';
+import React from "react";
+import Sidebar from "../Sidebar/Sidebar";
+import Chat from "../Chat/Chat";
+import classes from "./Main.module.css";
 
 function Main() {
-  return <Sidebar />;
+  return (
+    <div className={classes.general}>
+      <Sidebar />
+      <Chat />
+    </div>
+  );
 }
 
 export default Main;
