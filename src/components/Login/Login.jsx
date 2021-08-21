@@ -1,20 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import { TelegramLogo } from "../Icons/icons";
-import signInWithEmailAndPassword from "../../services/signInWithEmailAndPassword";
-import { types } from "../../constants/types";
-import { routes } from "../../constants/routes";
-import classes from "./Login.module.css";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+import { TelegramLogo } from '../Icons/icons';
+import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
+import { types } from '../../constants/types';
+import { routes } from '../../constants/routes';
+import classes from './Login.module.css';
 
 export default function LoginForm() {
+  let history = useHistory();
+
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validationSchema: Yup.object({
       email: Yup.string()
@@ -25,7 +27,9 @@ export default function LoginForm() {
         .min(8, types.input.password.error.passMinLength),
     }),
 
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      history.push(routes.home.url);
+    },
   });
 
   const handleClick = () => {
@@ -63,7 +67,7 @@ export default function LoginForm() {
           onBlur={formik.handleBlur}
           value={formik.values.password}
           label={types.input.password.label}
-          autocomplete=""
+          autocomplete=''
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
