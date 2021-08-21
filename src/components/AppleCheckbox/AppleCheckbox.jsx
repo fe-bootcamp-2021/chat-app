@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import '../../root.css';
-import './AppleCheckbox.css';
+import React, { useState } from "react";
+import cn from "classnames";
+import "../../root.css";
+import classes from "./AppleCheckbox.module.css";
 
 function AppleCheckbox() {
   const [isChecked, setIsChecked] = useState(false);
@@ -11,9 +12,16 @@ function AppleCheckbox() {
 
   return (
     <button onClick={handleCheckboxClick}>
-      <span className={isChecked ? 'checkbox active-checkbox' : 'checkbox'}>
-        <span className={isChecked ? 'round active-round' : 'round'}></span>
-      </span>
+      <span
+        className={cn([classes.checkbox], {
+          [classes.activeCheckbox]: !isChecked,
+        })}
+      ></span>
+      <span
+        className={cn([classes.round], {
+          [classes.activeRound]: !isChecked,
+        })}
+      ></span>
     </button>
   );
 }
