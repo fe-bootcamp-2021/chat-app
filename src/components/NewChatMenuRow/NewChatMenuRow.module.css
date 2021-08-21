@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .NewChatMenuRow:hover {
@@ -16,3 +17,14 @@
   padding-left: var(--size-base);
 }
 
+.text {
+  color: #fff;
+  font-weight: var(--thickness-semi-bold);
+  width: 68%;
+}
+
+.checkBox {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}

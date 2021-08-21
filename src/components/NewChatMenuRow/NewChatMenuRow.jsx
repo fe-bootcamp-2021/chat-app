@@ -6,9 +6,9 @@ function NewChatMenuRow({ rowContent, rowName, checkBox }) {
     <div className={classes.NewChatMenuRow}>
       <div className={classes.icon}>{rowContent}</div>
       <span className={classes.text}> {rowName} </span>
-      {checkBox}
+      <div className={classes.checkBox}>{checkBox}</div>
     </div>
-  );
+  );  
 }
 
 export default NewChatMenuRow;
