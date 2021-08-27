@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cn from "classnames";
-import "../../root.css";
 import classes from "./AppleCheckbox.module.css";
+import "../../root.css";
 
 function AppleCheckbox() {
   const [isChecked, setIsChecked] = useState(false);
