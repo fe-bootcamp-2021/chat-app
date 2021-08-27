@@ -3,8 +3,8 @@ import cn from 'classnames';
 import Button from '../Button/Button';
 import { Pen, User, Speaker, Group, Close } from '../Icons/icons';
 import { types } from '../../constants/formTypes';
-import classes from './NewChatMenu.module.css';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
+import classes from './NewChatMenu.module.css';
 
 export default function NewChatMenu() {
   const [isVisible, setIsVisible] = useState(false);

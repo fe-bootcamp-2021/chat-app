@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { TelegramLogo } from '../Icons/icons';
 import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
+import { validationLogin } from '../../helpers/formValidation.helper';
 import { types } from '../../constants/formTypes';
 import { routes } from '../../constants/routes';
 import classes from './Login.module.css';
@@ -18,16 +18,9 @@ export default function LoginForm() {
       email: '',
       password: '',
     },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email(types.input.email.error.validEmail)
-        .required(types.input.email.error.emailRequired),
-      password: Yup.string()
-        .required(types.input.password.error.passRequired)
-        .min(8, types.input.password.error.passMinLength),
-    }),
+    validationSchema:validationLogin,
 
-    onSubmit: (values) => {
+    onSubmit: () => {
       history.push(routes.home.url);
     },
   });

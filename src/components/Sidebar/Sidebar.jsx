@@ -23,6 +23,9 @@ function Sidebar() {
           <ToChatMenu />
           <ToChatMenu />
           <ToChatMenu />
+          <ToChatMenu />
+          <ToChatMenu />
+          <ToChatMenu />
         </div>
       </div>
       <NewChatMenu />
