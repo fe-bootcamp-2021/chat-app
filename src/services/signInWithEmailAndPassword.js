@@ -1,7 +1,7 @@
-import firebase from '../firebase';
+import firebase from '../libs/firebase.libs';
 
 function signInWithEmailAndPassword({ email, password }) {
-  firebase
+  return firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
@@ -10,9 +10,7 @@ function signInWithEmailAndPassword({ email, password }) {
       // ...
     })
     .catch((error) => {
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      alert('Invalid email or password')
+      throw new Error(error)
     });
 }
 
