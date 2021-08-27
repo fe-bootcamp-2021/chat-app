@@ -31,9 +31,10 @@ button {
 }
 
 .activeRound {
-  left: 27px;
+  left: 29px;
   border: 2px solid var(--purple-color);
 }
+
 .activeCheckbox {
   background: var(--purple-color);
 }
