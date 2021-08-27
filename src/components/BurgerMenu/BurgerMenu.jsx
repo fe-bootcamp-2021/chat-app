@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cn from 'classnames';
 import { Bookmark, Bug, Menu, Moon, Settings, User, Animation } from '../Icons/icons';
 import Button from '../Button/Button';
-import { types } from '../../constants/formTypes';
+import { types } from '../../constants/formTypes.constant';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
 import AppleCheckbox from '../AppleCheckbox/AppleCheckbox';
 import classes from './BurgerMenu.module.css';

@@ -4,10 +4,10 @@ import { useFormik } from 'formik';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { TelegramLogo } from '../Icons/icons';
-import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
+import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword.services';
 import { validationLogin } from '../../helpers/formValidation.helper';
-import { types } from '../../constants/formTypes';
-import { routes } from '../../constants/routes';
+import { types } from '../../constants/formTypes.constant';
+import { routes } from '../../constants/routes.constant';
 import classes from './Login.module.css';
 
 export default function LoginForm() {

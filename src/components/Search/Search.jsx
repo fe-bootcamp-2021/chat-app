@@ -1,5 +1,5 @@
 import React from 'react';
-import { types } from '../../constants/formTypes';
+import { types } from '../../constants/formTypes.constant';
 import { Search } from '../Icons/icons';
 import classes from './Search.module.css';
 

@@ -4,9 +4,9 @@ import { useFormik } from "formik";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { TelegramLogo } from "../Icons/icons";
-import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword";
-import { types } from "../../constants/formTypes";
-import { routes } from "../../constants/routes";
+import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword.services";
+import { types } from "../../constants/formTypes.constant";
+import { routes } from "../../constants/routes.constant";
 import {validationSignUp} from '../../helpers/formValidation.helper'
 import classes from "./Register.module.css";
 

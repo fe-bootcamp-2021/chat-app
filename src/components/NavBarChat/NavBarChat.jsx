@@ -1,5 +1,5 @@
 import React from 'react';
-import { types } from '../../constants/formTypes';
+import { types } from '../../constants/formTypes.constant';
 import Button from '../Button/Button';
 import { Search } from '../Icons/icons';
 import DotMenuChat from '../DotMenu/DotMenu';
