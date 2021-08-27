@@ -1,7 +1,10 @@
 import React from "react";
 import classes from "./NewChatMenuRow.module.css";
 
-function NewChatMenuRow({ rowContent, rowName, checkBox }) {
+function NewChatMenuRow(props) {
+
+  const { rowContent, rowName, checkBox } = props   //  destructuring props
+  
   return (
     <div className={classes.NewChatMenuRow}>
       <div className={classes.icon}>{rowContent}</div>

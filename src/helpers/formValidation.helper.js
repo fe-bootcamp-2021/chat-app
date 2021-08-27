@@ -1,15 +1,16 @@
 import * as Yup from "yup";
+import { types } from '../constants/formTypes.constant';
 
-export const validationLogin=Yup.object({
+const validationLogin = Yup.object({
     email: Yup.string()
       .email(types.input.email.error.validEmail)
       .required(types.input.email.error.emailRequired),
     password: Yup.string()
       .required(types.input.password.error.passRequired)
       .min(8, types.input.password.error.passMinLength),
-  }),
+  })
 
-export const validationSignUp=Yup.object({
+const validationSignUp = Yup.object({
     name: Yup.string()
       .max(30, types.input.name.error.nameMaxLength)
       .required(types.input.name.error.nameRequired)
@@ -30,4 +31,6 @@ export const validationSignUp=Yup.object({
         [Yup.ref(types.input.password.id), null],
         types.input.repeatPassword.error.passMustMatch
       ),
-  }),
+  })
+
+  export {validationSignUp,validationLogin}

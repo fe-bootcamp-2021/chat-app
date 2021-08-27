@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Button({ type, btnName, onClick, className }) {
+function Button(props) {
+  const { type, btnName, onClick, className } = props   //  destructuring props
   return (
     <button type={type} onClick={onClick} className={className}>
       {btnName}

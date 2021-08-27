@@ -11,7 +11,7 @@ function NavBarChat() {
       <div className={classes.chatInfo}>
         <div className={classes.circle}></div>
         <div className={classes.context}>
-          <p> Mher Sargsyan</p>
+          <span> Mher Sargsyan</span>
           <p> Welcome our website</p>
         </div>
       </div>

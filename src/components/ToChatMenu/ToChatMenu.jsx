@@ -13,7 +13,7 @@ export default function ToChatMenu() {
         <div className={classes.userCaption}>
           <div className={classes.dialogTitle}>
             <div className={classes.userTitle}>
-              <p>Karlen Nersisyan</p>
+              <span>Karlen Nersisyan</span>
             </div>
             <div className={classes.dialogTitleDetails}>
               <p>27.08.2021</p>
