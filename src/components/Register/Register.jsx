@@ -6,7 +6,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { TelegramLogo } from "../Icons/icons";
 import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword";
-import { types } from "../../constants/types";
+import { types } from "../../constants/formTypes";
 import { routes } from "../../constants/routes";
 import classes from "./Register.module.css";
 
