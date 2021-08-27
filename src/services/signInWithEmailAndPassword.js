@@ -7,7 +7,6 @@ function signInWithEmailAndPassword({ email, password }) {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      // ...
     })
     .catch((error) => {
       throw new Error(error)
