@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { types } from '../../constants/types';
+import { types } from '../../constants/formTypes';
 import Button from '../Button/Button';
 import cn from 'classnames';
 import { Bookmark, Bug, Menu, Moon, Settings, User, Animation } from '../Icons/icons';

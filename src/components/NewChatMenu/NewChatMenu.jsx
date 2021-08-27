@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cn from 'classnames';
 import Button from '../Button/Button';
 import { Pen, User, Speaker, Group, Close } from '../Icons/icons';
-import { types } from '../../constants/types';
+import { types } from '../../constants/formTypes';
 import classes from './NewChatMenu.module.css';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
 

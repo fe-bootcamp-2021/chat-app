@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cn from 'classnames';
 import Button from '../Button/Button';
 import { Checked, Delete, Notify, DotMenu } from '../Icons/icons';
-import { types } from '../../constants/types';
+import { types } from '../../constants/formTypes';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
 import classes from './DotMenu.module.css';
 
