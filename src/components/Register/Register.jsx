@@ -1,50 +1,29 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import { TelegramLogo } from '../Icons/icons';
-import signUpWithEmailAndPassword from '../../services/signUpWithEmailAndPassword';
-import { types } from '../../constants/types';
-import { routes } from '../../constants/routes';
-import classes from './Register.module.css';
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useFormik } from "formik";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import { TelegramLogo } from "../Icons/icons";
+import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword.services";
+import { types } from "../../constants/formTypes.constant";
+import { routes } from "../../constants/routes.constant";
+import {validationSignUp} from '../../helpers/formValidation.helper'
+import classes from "./Register.module.css";
 
 function Register() {
   let history = useHistory();
 
   const formik = useFormik({
     initialValues: {
-      name: '',
-      surname: '',
-      email: '',
-      password: '',
-      repeatPassword: '',
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+      repeatPassword: "",
     },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(30, types.input.name.error.nameMaxLength)
-        .required(types.input.name.error.nameRequired)
-        .min(2, types.input.name.error.nameMinLength),
-      surname: Yup.string()
-        .max(30, types.input.surname.error.surnameMaxLength)
-        .required(types.input.surname.error.surnameRequired)
-        .min(2, types.input.surname.error.surMinLength),
-      email: Yup.string()
-        .email(types.input.email.error.validEmail)
-        .required(types.input.email.error.emailRequired),
-      password: Yup.string()
-        .required(types.input.password.error.passRequired)
-        .min(8, types.input.password.error.passMinLength),
-      repeatPassword: Yup.string()
-        .required(types.input.repeatPassword.error.repeatPassRequired)
-        .oneOf(
-          [Yup.ref(types.input.password.id), null],
-          types.input.repeatPassword.error.passMustMatch
-        ),
-    }),
+    validationSchema: validationSignUp,
 
-    onSubmit: (values) => {
+    onSubmit: () => {
       history.push(routes.login.url);
     },
   });
@@ -69,6 +48,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.name}
           label={types.input.name.label}
+          className={classes.loginBtn}
           autoFocus
         />
         {formik.touched.name && formik.errors.name ? (
@@ -106,7 +86,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.password}
           label={types.input.password.label}
-          autocomplete=''
+          autocomplete=""
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
@@ -119,13 +99,20 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.repeatPassword}
           label={types.input.repeatPassword.label}
-          autocomplete=''
+          autocomplete=""
         />
         {formik.touched.repeatPassword && formik.errors.repeatPassword ? (
-          <div className={classes.errorMessage}>{formik.errors.repeatPassword}</div>
+          <div className={classes.errorMessage}>
+            {formik.errors.repeatPassword}
+          </div>
         ) : null}
 
-        <Button type={types.button.type} onClick={handleClick} btnName={types.button.name} />
+        <Button
+          type={types.button.type}
+          onClick={handleClick}
+          btnName={types.button.name}
+          className={classes.loginBtn}
+        />
       </form>
     </div>
   );

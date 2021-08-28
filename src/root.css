@@ -5,10 +5,13 @@
   --black-color: #000000;
   --darkGrey-color: #212121;
   --bg-color: #0f0f0f;
-  --error-color:red;
+  --error-color: red;
   --purple-color: #8774e1;
   --muteGrey-color: #707579;
   --notifyGreen: #0ac630;
+  --closeIcon-bg-color: #8774e1;
+  --hover-bg-color: #2b2b2b;
+  --message-color: #a0a0a0;
 
   /************ Typography Variables ******************/
 

@@ -1,18 +1,18 @@
-import firebase from '../firebase';
+import firebase from '../libs/firebase.libs';
+import { routes } from '../constants/routes.constant';
 
 function signInWithEmailAndPassword({ email, password }) {
-  firebase
+  return firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      // ...
+      window.history.pushState('page2', 'Title', routes.home.url);
+      window.location.reload();
     })
     .catch((error) => {
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      alert('Invalid email or password')
+      throw new Error(error);
     });
 }
 

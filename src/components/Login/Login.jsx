@@ -1,36 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { TelegramLogo } from '../Icons/icons';
-import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword';
-import { types } from '../../constants/types';
-import { routes } from '../../constants/routes';
+import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword.services';
+import { validationLogin } from '../../helpers/formValidation.helper';
+import { types } from '../../constants/formTypes.constant';
+import { routes } from '../../constants/routes.constant';
 import classes from './Login.module.css';
 
 export default function LoginForm() {
+
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email(types.input.email.error.validEmail)
-        .required(types.input.email.error.emailRequired),
-      password: Yup.string()
-        .required(types.input.password.error.passRequired)
-        .min(8, types.input.password.error.passMinLength),
-    }),
+    validationSchema: validationLogin,
 
-    onSubmit: (values) => {},
+    onSubmit: () => {
+      signInWithEmailAndPassword(formik.values);
+    },
   });
-
-  const handleClick = () => {
-    signInWithEmailAndPassword(formik.values);
-  };
 
   return (
     <div className={classes.formContainer}>
@@ -49,6 +41,7 @@ export default function LoginForm() {
           onBlur={formik.handleBlur}
           value={formik.values.email}
           label={types.input.email.label}
+          className={classes.loginBtn}
           autoFocus
         />
         {formik.touched.email && formik.errors.email ? (
@@ -68,7 +61,7 @@ export default function LoginForm() {
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <Button type={types.button.type} btnName={types.button.name} onClick={handleClick} />
+        <Button type={types.button.type} btnName={types.button.name} className={classes.loginBtn} />
       </form>
     </div>
   );

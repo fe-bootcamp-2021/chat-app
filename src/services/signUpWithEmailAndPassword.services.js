@@ -1,15 +1,14 @@
-import firebase from '../firebase';
+import firebase from '../libs/firebase.libs';
 
 function signUpWithEmailAndPassword({ email, password }) {
-  firebase
+  return firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       let user = userCredential.user;
     })
-    .catch((error) => {
-      let errorCode = error.code;
-      let errorMessage = error.message;
+    .catch(() => {
+      throw new Error(error)
     });
 }
 
