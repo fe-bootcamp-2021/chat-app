@@ -370,3 +370,7 @@ template {
 [hidden] {
   display: none;
 }
+
+input{
+  width: 250px;
+}

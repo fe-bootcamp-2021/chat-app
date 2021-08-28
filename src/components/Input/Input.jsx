@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import classes from "./Input.module.css";
 
-function Input({ id, name, type, onChange, onBlur, value, label, autoFocus }) {
+function Input(props) {
+
+  const { id, name, type, onChange, onBlur, value, label, autoFocus } = props   //  destructuring props
+
   return (
     <div className={classes.inputField}>
       <input

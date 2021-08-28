@@ -1,5 +1,5 @@
 import React from 'react';
-import { types } from '../../constants/formTypes';
+import { types } from '../../constants/formTypes.constant';
 import Button from '../Button/Button';
 import { Search } from '../Icons/icons';
 import DotMenuChat from '../DotMenu/DotMenu';
@@ -11,7 +11,7 @@ function NavBarChat() {
       <div className={classes.chatInfo}>
         <div className={classes.circle}></div>
         <div className={classes.context}>
-          <p> Mher Sargsyan</p>
+          <span> Mher Sargsyan</span>
           <p> Welcome our website</p>
         </div>
       </div>
