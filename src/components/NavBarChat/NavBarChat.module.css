@@ -23,15 +23,11 @@
 }
 
 p {
-  color:var(--message-color);
+  color: var(--message-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 13px;
-}
-
-span{
-  color:white;
 }
 
 .context {
@@ -47,4 +43,7 @@ span{
 
 .icon:hover {
   background: var(--hover-bg-color);
-} 
+}
+.navBarChatFullName {
+  color: #fff;
+}
