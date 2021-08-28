@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
@@ -11,23 +11,18 @@ import { routes } from '../../constants/routes.constant';
 import classes from './Login.module.css';
 
 export default function LoginForm() {
-  let history = useHistory();
 
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
-    validationSchema:validationLogin,
+    validationSchema: validationLogin,
 
     onSubmit: () => {
-      history.push(routes.home.url);
+      signInWithEmailAndPassword(formik.values);
     },
   });
-
-  const handleClick = () => {
-    signInWithEmailAndPassword(formik.values);
-  };
 
   return (
     <div className={classes.formContainer}>
@@ -66,12 +61,7 @@ export default function LoginForm() {
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <Button
-          type={types.button.type}
-          btnName={types.button.name}
-          onClick={handleClick}
-          className={classes.loginBtn}
-        />
+        <Button type={types.button.type} btnName={types.button.name} className={classes.loginBtn} />
       </form>
     </div>
   );

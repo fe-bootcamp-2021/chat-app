@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Button(props) {
-  const { type, btnName, onClick, className } = props   //  destructuring props
+  const { type, btnName, onClick, className } = props; //  destructuring props
   return (
     <button type={type} onClick={onClick} className={className}>
       {btnName}
@@ -15,5 +15,5 @@ export default Button;
 Button.propTypes = {
   type: PropTypes.string.isRequired,
   btnName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
