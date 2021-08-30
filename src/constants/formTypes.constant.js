@@ -1,5 +1,10 @@
 export const types = {
   input: {
+    file: {
+      type: 'file',
+      id: 'file-input',
+    },
+
     search: {
       type: 'search',
       id: 'search',
