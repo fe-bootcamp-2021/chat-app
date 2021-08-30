@@ -4,6 +4,8 @@
   align-items: center;
   background: var(--darkGrey-color);
   padding: 5px;
+  position: fixed;
+  width: 70%;
 }
 
 .chatUtils {

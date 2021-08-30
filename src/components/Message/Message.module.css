@@ -1,0 +1,27 @@
+.message {
+  color: var(--white-color);
+  padding: 4px;
+  display: inline-block;
+}
+
+.messageTime {
+  color: var(--message-color);
+  display: inline-block;
+}
+
+.myMessage {
+  background: var(--purple-color);
+  margin-top: 5px;
+  border-radius: 15px 15px 0 15px;
+  padding: 5px;
+  width: fit-content;
+  transform: translate(430px, 0px);
+}
+
+.otherUserMessage {
+  background: var(--darkGrey-color);
+  margin-top: 5px;
+  border-radius: 15px 15px 15px 0;
+  padding: 5px;
+  width: fit-content;
+}
