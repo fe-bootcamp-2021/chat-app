@@ -11,17 +11,28 @@ const UnAuthenticatedApp = lazy(() =>
 
 import "./root.css";
 import "./App.css";
+import LoadSpinner from "./components/LoadSpinner/LoadSpinner";
 
 export function App() {
   const { user } = useAuth();
 
   if (user === null) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <LoadSpinner />
+      </div>
+    );
   }
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div>
+            <LoadSpinner />
+          </div>
+        }
+      >
         {user ? <AuthenticatedApp /> : <UnAuthenticatedApp />}
       </Suspense>
     </>
