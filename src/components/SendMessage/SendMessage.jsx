@@ -1,17 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { Arrow } from '../Icons/icons';
+import { Arrow } from "../Icons/icons";
 
-import classes from './SendMessage.module.css';
+import classes from "./SendMessage.module.css";
 
-function SendMessage() {
-  const handleClick = () => {
-    alert('send message');
-  };
-
+function SendMessage({ onClick }) {
   return (
     <div className={classes.circle}>
-      <button onClick={handleClick}>
+      <button onClick={onClick}>
         <Arrow />
       </button>
     </div>
