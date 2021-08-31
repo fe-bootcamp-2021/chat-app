@@ -1,7 +1,7 @@
 .messageInput {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1vh;
   position: relative;
 }
 
