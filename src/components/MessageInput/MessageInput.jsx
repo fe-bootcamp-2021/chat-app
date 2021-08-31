@@ -1,7 +1,9 @@
 import React from 'react';
-import { types } from '../../constants/formTypes.constant';
+
 import FileUpload from '../FileUpload/FileUpload';
 import SendMessage from '../SendMessage/SendMessage';
+import { types } from '../../constants/formTypes.constant';
+
 import classes from './MessageInput.module.css';
 
 function MessageInput() {

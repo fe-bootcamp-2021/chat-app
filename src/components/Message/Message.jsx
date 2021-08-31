@@ -1,5 +1,7 @@
 import React from 'react';
+
 import messageTypes from '../../constants/messageTypes.constant';
+
 import classes from './Message.module.css';
 
 function Message({ type }) {

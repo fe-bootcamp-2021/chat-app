@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
+
 import Button from '../Button/Button';
 import { Checked, Delete, Notify, DotMenu } from '../Icons/icons';
-import { types } from '../../constants/formTypes.constant';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
+import { types } from '../../constants/formTypes.constant';
+
 import classes from './DotMenu.module.css';
 
 function DotMenuChat() {
