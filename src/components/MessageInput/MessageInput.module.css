@@ -1,0 +1,17 @@
+.messageInput {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.input {
+  background: var(--darkGrey-color);
+  border: none;
+  outline: none;
+  color: var(--white-color);
+  padding: 10px 15px 10px 40px;
+  border-radius: 5px 5px 0 5px;
+  max-width: 500px;
+  width: 100%;
+}
