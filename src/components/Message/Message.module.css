@@ -15,7 +15,6 @@
   border-radius: 15px 15px 0 15px;
   padding: 5px;
   width: fit-content;
-  transform: translate(430px, 0px);
 }
 
 .otherUserMessage {
@@ -24,4 +23,9 @@
   border-radius: 15px 15px 15px 0;
   padding: 5px;
   width: fit-content;
+}
+
+.myBubble {
+  display: flex;
+  flex-direction: row-reverse;
 }

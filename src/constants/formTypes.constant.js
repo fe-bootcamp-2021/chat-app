@@ -1,5 +1,10 @@
 export const types = {
   input: {
+    message: {
+      type: 'text',
+      placeholder: 'message',
+    },
+
     file: {
       type: 'file',
       id: 'file-input',

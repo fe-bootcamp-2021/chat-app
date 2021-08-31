@@ -1,4 +1,5 @@
 import React from 'react';
+import { types } from '../../constants/formTypes.constant';
 import FileUpload from '../FileUpload/FileUpload';
 import SendMessage from '../SendMessage/SendMessage';
 import classes from './MessageInput.module.css';
@@ -6,7 +7,11 @@ import classes from './MessageInput.module.css';
 function MessageInput() {
   return (
     <div className={classes.messageInput}>
-      <input type='text' placeholder='Message' className={classes.input} />
+      <input
+        type={types.input.message.typ}
+        placeholder={types.input.message.placeholder}
+        className={classes.input}
+      />
       <SendMessage />
       <FileUpload />
     </div>
