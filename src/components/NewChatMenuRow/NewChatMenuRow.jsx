@@ -1,4 +1,5 @@
 import React from "react";
+
 import classes from "./NewChatMenuRow.module.css";
 
 function NewChatMenuRow(props) {

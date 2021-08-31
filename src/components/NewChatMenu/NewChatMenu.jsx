@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
+
 import Button from '../Button/Button';
 import { Pen, User, Speaker, Group, Close } from '../Icons/icons';
 import { types } from '../../constants/formTypes.constant';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
+
 import classes from './NewChatMenu.module.css';
 
 export default function NewChatMenu() {

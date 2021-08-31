@@ -1,6 +1,7 @@
 import React from 'react';
-import Button from '../Button/Button';
+
 import { Arrow } from '../Icons/icons';
+
 import classes from './SendMessage.module.css';
 
 function SendMessage() {

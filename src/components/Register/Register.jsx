@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useFormik } from "formik";
+
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { TelegramLogo } from "../Icons/icons";
@@ -8,6 +9,7 @@ import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPasswor
 import { types } from "../../constants/formTypes.constant";
 import { routes } from "../../constants/routes.constant";
 import {validationSignUp} from '../../helpers/formValidation.helper'
+
 import classes from "./Register.module.css";
 
 function Register() {

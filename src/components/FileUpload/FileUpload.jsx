@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Clip } from '../Icons/icons';
 import { types } from '../../constants/formTypes.constant';
+
 import classes from './FileUpload.module.css';
 
 function FileUpload() {
