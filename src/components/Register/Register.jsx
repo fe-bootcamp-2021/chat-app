@@ -1,18 +1,23 @@
 import React from "react";
+import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { TelegramLogo } from "../Icons/icons";
-import signUpWithEmailAndPassword from "../../services/signUpWithEmailAndPassword.services";
 import { types } from "../../constants/formTypes.constant";
-import { routes } from "../../constants/routes.constant";
-import {validationSignUp} from '../../helpers/formValidation.helper'
+import routes from "../../constants/routes.constant";
+import { validationSignUp } from "../../helpers/formValidation.helper";
+import { useAuth } from "../../hooks/useAuth.hook";
 
 import classes from "./Register.module.css";
 
 function Register() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup } = useAuth();
+
   let history = useHistory();
 
   const formik = useFormik({
@@ -26,12 +31,16 @@ function Register() {
     validationSchema: validationSignUp,
 
     onSubmit: () => {
-      history.push(routes.login.url);
+      history.push("/login");
     },
   });
 
-  const handleClick = () => {
-    signUpWithEmailAndPassword(formik.values);
+  const handleSignUp = () => {
+    return signup(email, password)
+      .then((res) => {
+        console.log("success::", res);
+      })
+      .catch((e) => alert(e.message));
   };
 
   return (
@@ -40,7 +49,9 @@ function Register() {
         <TelegramLogo />
       </div>
       <h1 className={classes.loginFormTitle}>Sign Up to Telegram</h1>
-      <Link to={routes.login.url}>Log in</Link>
+
+      <Link to={routes.login().route}>Login</Link>
+
       <form onSubmit={formik.handleSubmit}>
         <Input
           id={types.input.name.id}
@@ -72,9 +83,9 @@ function Register() {
           id={types.input.email.id}
           name={types.input.email.name}
           type={types.input.email.type}
-          onChange={formik.handleChange}
+          onChange={(e) => setEmail(e.target.value)}
           onBlur={formik.handleBlur}
-          value={formik.values.email}
+          value={email}
           label={types.input.email.label}
         />
         {formik.touched.email && formik.errors.email ? (
@@ -84,9 +95,9 @@ function Register() {
           id={types.input.password.id}
           name={types.input.password.name}
           type={types.input.password.type}
-          onChange={formik.handleChange}
+          onChange={(e) => setPassword(e.target.value)}
           onBlur={formik.handleBlur}
-          value={formik.values.password}
+          value={password}
           label={types.input.password.label}
           autocomplete=""
         />
@@ -111,7 +122,7 @@ function Register() {
 
         <Button
           type={types.button.type}
-          onClick={handleClick}
+          onClick={handleSignUp}
           btnName={types.button.name}
           className={classes.loginBtn}
         />

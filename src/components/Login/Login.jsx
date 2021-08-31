@@ -1,30 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useFormik } from 'formik';
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useFormik } from "formik";
 
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import { TelegramLogo } from '../Icons/icons';
-import signInWithEmailAndPassword from '../../services/signInWithEmailAndPassword.services';
-import { validationLogin } from '../../helpers/formValidation.helper';
-import { types } from '../../constants/formTypes.constant';
-import { routes } from '../../constants/routes.constant';
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import { TelegramLogo } from "../Icons/icons";
+import { validationLogin } from "../../helpers/formValidation.helper";
+import { types } from "../../constants/formTypes.constant";
+import routes from "../../constants/routes.constant";
+import { useAuth } from "../../hooks/useAuth.hook";
 
-import classes from './Login.module.css';
+import classes from "./Login.module.css";
 
 export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signin } = useAuth();
 
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validationSchema: validationLogin,
 
     onSubmit: () => {
-      signInWithEmailAndPassword(formik.values);
+      // signInWithEmailAndPassword(formik.values);
     },
   });
+
+  const handleSignIn = () => {
+    return signin(email, password)
+      .then((res) => {
+        console.log("success::", res);
+      })
+      .catch((e) => alert(e.message));
+  };
 
   return (
     <div className={classes.formContainer}>
@@ -32,16 +44,18 @@ export default function LoginForm() {
         <TelegramLogo />
       </div>
       <h1 className={classes.loginFormTitle}>Sign In to Telegram</h1>
-      <Link to={routes.register.url}>Create Account</Link>
+
+      <Link to={routes.register().route}>Create Account</Link>
+
       <p>Please confirm your email and enter your password.</p>
       <form onSubmit={formik.handleSubmit}>
         <Input
           id={types.input.email.id}
           name={types.input.email.name}
           type={types.input.email.type}
-          onChange={formik.handleChange}
+          onChange={(e) => setEmail(e.target.value)}
           onBlur={formik.handleBlur}
-          value={formik.values.email}
+          value={email}
           label={types.input.email.label}
           className={classes.loginBtn}
           autoFocus
@@ -53,17 +67,22 @@ export default function LoginForm() {
           id={types.input.password.id}
           name={types.input.password.name}
           type={types.input.password.type}
-          onChange={formik.handleChange}
+          onChange={(e) => setPassword(e.target.value)}
           onBlur={formik.handleBlur}
-          value={formik.values.password}
+          value={password}
           label={types.input.password.label}
-          autocomplete=''
+          autocomplete=""
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <Button type={types.button.type} btnName={types.button.name} className={classes.loginBtn} />
+        <Button
+          type={types.button.type}
+          onClick={handleSignIn}
+          btnName={types.button.name}
+          className={classes.loginBtn}
+        />
       </form>
     </div>
   );
