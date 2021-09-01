@@ -46,7 +46,7 @@ function Chat() {
     <div className={classes.chat}>
       <NavBarChat />
       <div className={classes.messages}>
-        {messages.map(({ text, date, author}) => {
+        {messages.map(({ text, date, author }) => {
           return (
             <Message
               key={idGen()}
