@@ -8,14 +8,21 @@ import NewChatMenuRow from "../NewChatMenuRow/NewChatMenuRow";
 import { types } from "../../constants/formTypes.constant";
 
 import classes from "./DotMenu.module.css";
+import { useHistory } from "react-router-dom";
 
 function DotMenuChat() {
-  const [isVisible, setIsVisible] = useState(false); 
+  const [isVisible, setIsVisible] = useState(false);
   const { signout } = useAuth();
+  const history = useHistory();
 
   // const handleClick = () => { // zhamanakavor popoxutyun
   //   setIsVisible(!isVisible);
   // };
+  
+  const handleSubmit = () => {
+    history.replace("/");
+    signout();
+  };
 
   return (
     <>
@@ -27,7 +34,7 @@ function DotMenuChat() {
       <Button
         className={classes.icon}
         type={types.button.type}
-        onClick={signout}
+        onClick={handleSubmit}
         btnName={<DotMenu />}
       />
     </>
