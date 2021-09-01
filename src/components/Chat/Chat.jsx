@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import NavBarChat from "../NavBarChat/NavBarChat";
-import Message from "../Message/Message";
-import MessageInput from "../MessageInput/MessageInput";
-import messageTypes from "../../constants/messageTypes.constant";
-import classes from "./Chat.module.css";
-import getDateNow from '../../helpers/getDateNow.helper'
+import React, { useState } from 'react';
+import NavBarChat from '../NavBarChat/NavBarChat';
+import Message from '../Message/Message';
+import MessageInput from '../MessageInput/MessageInput';
+import messageTypes from '../../constants/messageTypes.constant';
+import getDateNow from '../../helpers/getDateNow.helper';
+import idGen from '../../helpers/idGenerator.helper';
+import classes from './Chat.module.css';
 
 function Chat() {
   const currentUser = { uuid: 10 };
@@ -25,6 +26,20 @@ function Chat() {
     },
   ]);
 
+  const handleOnSend = () => {
+    (text) => {
+      setMessages((m) => [
+        ...m,
+        {
+          text,
+          type: messageTypes.mine,
+          date: getDateNow(),
+          author: currentUser,
+        },
+      ]);
+    };
+  };
+
   return (
     <div className={classes.chat}>
       <NavBarChat />
@@ -32,30 +47,15 @@ function Chat() {
         {messages.map(({ text, date, author}) => {
           return (
             <Message
-              type={
-                author.uuid === currentUser.uuid
-                  ? messageTypes.mine
-                  : messageTypes.otherUser
-              }
+              key={idGen()}
+              type={author.uuid === currentUser.uuid ? messageTypes.mine : messageTypes.otherUser}
               text={text}
               date={date}
             />
           );
         })}
       </div>
-      <MessageInput
-        onSend={(text) => {
-          setMessages((m) => [
-            ...m,
-            {
-              text,
-              type: messageTypes.mine,
-              date: getDateNow(),
-              author: currentUser,
-            },
-          ]);
-        }}
-      />
+      <MessageInput onSend={handleOnSend} />
     </div>
   );
 }
