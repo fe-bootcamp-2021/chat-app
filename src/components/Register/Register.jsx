@@ -30,7 +30,7 @@ function Register() {
     validationSchema: validationSignUp,
 
     onSubmit: () => {
-      signup(formik.values.email, formik.values.password)
+      signup(formik.values)
         .then((res) => {
           history.replace(routes.main().route);
         })
@@ -107,7 +107,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.repeatPassword}
           label={types.input.repeatPassword.label}
-          autocomplete=""
+          autocomplete=''
         />
         {formik.touched.repeatPassword && formik.errors.repeatPassword ? (
           <div className={classes.errorMessage}>{formik.errors.repeatPassword}</div>
