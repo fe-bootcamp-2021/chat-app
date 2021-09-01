@@ -24,58 +24,6 @@ function Chat() {
         uuid: 10,
       },
     },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {
-        uuid: 10,
-      },
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
-    {
-      text: "Hi",
-      date: new Date().toDateString(),
-      author: {},
-    },
   ]);
 
   return (
