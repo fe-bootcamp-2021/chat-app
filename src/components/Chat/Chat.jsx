@@ -28,8 +28,7 @@ function Chat() {
     },
   ]);
 
-  const handleOnSend = () => {
-    (text) => {
+  const handleOnSend = (text) => {
       setMessages((m) => [
         ...m,
         {
@@ -39,7 +38,6 @@ function Chat() {
           author: currentUser,
         },
       ]);
-    };
   };
 
   return (
