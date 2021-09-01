@@ -1,5 +1,4 @@
 import React from 'react';
-
 import classes from './ToChatMenu.module.css';
 
 export default function ToChatMenu({ avatar, fullName, lastMessage, lastMessageDate }) {
