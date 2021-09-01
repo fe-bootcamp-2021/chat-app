@@ -20,6 +20,9 @@ function MessageInput({ onSend }) {
       />
       <SendMessage
         onClick={() => {
+          if (message.length === 0) {
+            return;
+          }
           onSend(message);
           setMessage('');
         }}
