@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import FileUpload from "../FileUpload/FileUpload";
-import SendMessage from "../SendMessage/SendMessage";
-import { types } from "../../constants/formTypes.constant";
+import FileUpload from '../FileUpload/FileUpload';
+import SendMessage from '../SendMessage/SendMessage';
+import { types } from '../../constants/formTypes.constant';
 
-import classes from "./MessageInput.module.css";
+import classes from './MessageInput.module.css';
 
 function MessageInput({ onSend }) {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   return (
     <div className={classes.messageInput}>
@@ -18,7 +18,12 @@ function MessageInput({ onSend }) {
         onChange={(e) => setMessage(e.target.value)}
         value={message}
       />
-      <SendMessage onClick={() => onSend(message)} />
+      <SendMessage
+        onClick={() => {
+          onSend(message);
+          setMessage('');
+        }}
+      />
       <FileUpload />
     </div>
   );
