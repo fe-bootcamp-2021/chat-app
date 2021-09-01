@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import cn from "classnames";
 
 import { useAuth } from "../../hooks/useAuth.hook";
@@ -6,9 +7,9 @@ import Button from "../Button/Button";
 import { Checked, Delete, Notify, DotMenu } from "../Icons/icons";
 import NewChatMenuRow from "../NewChatMenuRow/NewChatMenuRow";
 import { types } from "../../constants/formTypes.constant";
+import routes from "../../constants/routes.constant";
 
 import classes from "./DotMenu.module.css";
-import { useHistory } from "react-router-dom";
 
 function DotMenuChat() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,9 +19,9 @@ function DotMenuChat() {
   // const handleClick = () => { // zhamanakavor popoxutyun
   //   setIsVisible(!isVisible);
   // };
-  
+
   const handleSubmit = () => {
-    history.replace("/");
+    history.replace(routes.login().route);
     signout();
   };
 
