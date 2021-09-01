@@ -7,7 +7,9 @@ import Main from "../Main/Main";
 function AuthenticatedApp() {
   return (
     <Switch>
+      <Route exact path={routes.login().route} component={Main} />
       <Route path={routes.main().route} component={Main} />
+      <Route path={routes.register().route} component={Main} />
     </Switch>
   );
 }
