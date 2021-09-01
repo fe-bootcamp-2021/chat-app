@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React from 'react';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
+=======
+import React from "react";
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useFormik } from "formik";
+>>>>>>> d79cd316152dd0775c7297dae217f53405bd8f60
 
 import Input from '../Input/Input';
 import Button from '../Button/Button';
@@ -33,7 +40,6 @@ function Register() {
       signup(formik.values.email, formik.values.password)
         .then((res) => {
           history.replace(routes.main().route);
-          console.log('success::', res);
         })
         .catch((e) => alert(e.message));
     },
