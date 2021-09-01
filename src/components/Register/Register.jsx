@@ -29,16 +29,13 @@ function Register() {
     validationSchema: validationSignUp,
 
     onSubmit: () => {
+      signup(formik.values.email, formik.values.password)
+        .then((res) => {
+          console.log("success::", res);
+        })
+        .catch((e) => alert(e.message));
     },
   });
-
-  const handleSignUp = () => {
-    return signup(email, password)
-      .then((res) => {
-        console.log("success::", res);
-      })
-      .catch((e) => alert(e.message));
-  };
 
   return (
     <div className={classes.formContainer}>
@@ -80,9 +77,9 @@ function Register() {
           id={types.input.email.id}
           name={types.input.email.name}
           type={types.input.email.type}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={email}
+          value={formik.values.email}
           label={types.input.email.label}
         />
         {formik.touched.email && formik.errors.email ? (
@@ -92,9 +89,9 @@ function Register() {
           id={types.input.password.id}
           name={types.input.password.name}
           type={types.input.password.type}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={password}
+          value={formik.values.password}
           label={types.input.password.label}
           autocomplete=""
         />
@@ -119,7 +116,6 @@ function Register() {
 
         <Button
           type={types.button.type}
-          onClick={handleSignUp}
           btnName={types.button.name}
           className={classes.loginBtn}
         />

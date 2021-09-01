@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { Link ,useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 
 import Input from "../Input/Input";
@@ -14,8 +13,6 @@ import { useAuth } from "../../hooks/useAuth.hook";
 import classes from "./Login.module.css";
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const { signin } = useAuth();
   const history = useHistory();
 
@@ -24,19 +21,18 @@ export default function LoginForm() {
       email: "",
       password: "",
     },
+
     validationSchema: validationLogin,
 
-    onSubmit: () => {},
+    onSubmit: () => {
+      signin(formik.values.email, formik.values.password)
+        .then((res) => {
+          history.push(routes.main().route);
+          console.log("success::", res);
+        })
+        .catch((e) => alert(e.message));
+    },
   });
-
-  const handleSignIn = () => {
-    return signin(email, password)
-      .then((res) => {
-        history.push(routes.main().route);
-        console.log("success::", res);
-      })
-      .catch((e) => alert(e.message));
-  };
 
   return (
     <div className={classes.formContainer}>
@@ -53,9 +49,9 @@ export default function LoginForm() {
           id={types.input.email.id}
           name={types.input.email.name}
           type={types.input.email.type}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={email}
+          value={formik.values.email}
           label={types.input.email.label}
           className={classes.loginBtn}
           autoFocus
@@ -67,9 +63,9 @@ export default function LoginForm() {
           id={types.input.password.id}
           name={types.input.password.name}
           type={types.input.password.type}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={password}
+          value={formik.values.password}
           label={types.input.password.label}
           autocomplete=""
         />
@@ -79,7 +75,6 @@ export default function LoginForm() {
 
         <Button
           type={types.button.type}
-          onClick={handleSignIn}
           btnName={types.button.name}
           className={classes.loginBtn}
         />
