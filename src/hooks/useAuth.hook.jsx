@@ -32,10 +32,6 @@ function useProvideAuth() {
       });
   };
 
-  const signInWithGmail = () => {
-    return firebase.auth().signInWithEmailLink();
-  };
-
   const signup = (email, password) => {
     return firebase
       .auth()
