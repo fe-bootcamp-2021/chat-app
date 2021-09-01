@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+
 import NavBarChat from '../NavBarChat/NavBarChat';
 import Message from '../Message/Message';
 import MessageInput from '../MessageInput/MessageInput';
 import messageTypes from '../../constants/messageTypes.constant';
 import getDateNow from '../../helpers/getDateNow.helper';
 import idGen from '../../helpers/idGenerator.helper';
+
 import classes from './Chat.module.css';
 
 function Chat() {
