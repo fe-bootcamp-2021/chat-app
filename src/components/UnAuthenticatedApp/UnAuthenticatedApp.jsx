@@ -9,6 +9,7 @@ function UnAuthenticatedApp() {
   return (
     <Switch>
       <Route exact path={routes.login().route} component={Login} />
+      <Route path={routes.main().route} component={Login} />
       <Route path={routes.register().route} component={Register} />
     </Switch>
   );

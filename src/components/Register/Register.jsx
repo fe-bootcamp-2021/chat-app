@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 
 import Input from "../Input/Input";
@@ -18,8 +18,6 @@ function Register() {
   const [password, setPassword] = useState("");
   const { signup } = useAuth();
 
-  let history = useHistory();
-
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -31,7 +29,6 @@ function Register() {
     validationSchema: validationSignUp,
 
     onSubmit: () => {
-      history.push("/login");
     },
   });
 

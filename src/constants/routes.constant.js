@@ -4,15 +4,15 @@ import Register from "../components/Register/Register";
 
 const routes = {
   login: () => ({
-    route: "/login",
+    route: "/",
     component: Login,
   }),
   register: () => ({
-    route: "/register",
+    route: "/signup",
     component: Register,
   }),
   main: () => ({
-    route: "/",
+    route: "/home",
     component: Main,
   }),
 };

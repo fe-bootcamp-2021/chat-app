@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useHistory} from "react-router-dom";
 import { useFormik } from "formik";
 
 import Input from "../Input/Input";
@@ -17,6 +17,7 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signin } = useAuth();
+  const history = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -31,6 +32,7 @@ export default function LoginForm() {
   const handleSignIn = () => {
     return signin(email, password)
       .then((res) => {
+        history.push(routes.main().route);
         console.log("success::", res);
       })
       .catch((e) => alert(e.message));
