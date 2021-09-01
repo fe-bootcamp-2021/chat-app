@@ -1,25 +1,24 @@
 import React, { useState } from "react";
-
 import NavBarChat from "../NavBarChat/NavBarChat";
 import Message from "../Message/Message";
 import MessageInput from "../MessageInput/MessageInput";
 import messageTypes from "../../constants/messageTypes.constant";
-
 import classes from "./Chat.module.css";
+import getDateNow from '../../helpers/getDateNow.helper'
 
 function Chat() {
   const currentUser = { uuid: 10 };
   const [messages, setMessages] = useState([
     {
-      text: "Hi",
-      date: new Date().toDateString(),
+      text: 'Hi',
+      date: getDateNow(),
       author: {
         uuid: 10,
       },
     },
     {
-      text: "Hi",
-      date: new Date().toDateString(),
+      text: 'Hi',
+      date: getDateNow(),
       author: {
         uuid: 10,
       },
@@ -51,7 +50,7 @@ function Chat() {
             {
               text,
               type: messageTypes.mine,
-              date: new Date().toDateString(),
+              date: getDateNow(),
               author: currentUser,
             },
           ]);
