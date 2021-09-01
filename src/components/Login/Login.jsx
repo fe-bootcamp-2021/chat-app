@@ -25,9 +25,7 @@ export default function LoginForm() {
     },
     validationSchema: validationLogin,
 
-    onSubmit: () => {
-      // signInWithEmailAndPassword(formik.values);
-    },
+    onSubmit: () => {},
   });
 
   const handleSignIn = () => {
