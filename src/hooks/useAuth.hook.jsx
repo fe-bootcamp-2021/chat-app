@@ -95,6 +95,5 @@ function useProvideAuth() {
     signout,
     sendPasswordResetEmail,
     confirmPasswordReset,
-    signInWithGmail,
   };
 }
