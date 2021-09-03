@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './ToChatMenu.module.css';
 
-export default function ToChatMenu({ avatar, fullName, lastMessage, lastMessageDate }) {
+export default function ToChatMenu({ avatar, name, surname, lastMessage, lastMessageDate }) {
   return (
     <>
       <div className={classes.toChatMenuWrapper}>
@@ -11,7 +11,7 @@ export default function ToChatMenu({ avatar, fullName, lastMessage, lastMessageD
         <div className={classes.userCaption}>
           <div className={classes.dialogTitle}>
             <div className={classes.userTitle}>
-              <span>{fullName}</span>
+              <span>{name + ' ' + surname}</span>
             </div>
             <div className={classes.dialogTitleDetails}>
               <p>{lastMessageDate}</p>

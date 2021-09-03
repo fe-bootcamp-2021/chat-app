@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import NewChatMenu from '../NewChatMenu/NewChatMenu';
@@ -7,16 +7,16 @@ import ToChatMenu from '../ToChatMenu/ToChatMenu';
 import idGen from '../../helpers/idGenerator.helper';
 
 import classes from './Sidebar.module.css';
+import { getUser } from '../../services/user.services';
 
 function Sidebar() {
-  const [toChat, setToChat] = useState([
-    {
-      avatar: '',
-      fullName: 'Karlen Nersisyan',
-      lastMessage: 'esim esim',
-      lastMessageDate: '11',
-    },
-  ]);
+  const [toChat, setToChat] = useState([]);
+
+  useEffect(() => {
+    getUser().then((res) => {
+      setToChat(Object.values(res));
+    });
+  }, []);
 
   return (
     <>
@@ -26,12 +26,13 @@ function Sidebar() {
           <Search />
         </div>
         <div className={classes.sidebarContent}>
-          {toChat.map(({ avatar, fullName, lastMessage, lastMessageDate }) => {
+          {toChat.map(({ avatar, name, surname, lastMessage, lastMessageDate }) => {
             return (
               <ToChatMenu
                 key={idGen()}
                 avatar={avatar}
-                fullName={fullName}
+                name={name}
+                surname={surname}
                 lastMessage={lastMessage}
                 lastMessageDate={lastMessageDate}
               />
