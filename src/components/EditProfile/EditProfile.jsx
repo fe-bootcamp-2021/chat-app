@@ -21,18 +21,21 @@ function EditProfile({ setIsEditProfileOpen }) {
         name={types.input.name.name}
         type={types.input.name.type}
         label={types.input.name.label}
+        variant={'secondary'}
       />
       <Input
         id={types.input.surname.id}
         name={types.input.surname.name}
         type={types.input.surname.type}
         label={types.input.surname.label}
+        variant={'secondary'}
       />
       <Input
         id={types.input.email.id}
         name={types.input.email.name}
         type={types.input.email.type}
         label={types.input.email.label}
+        variant={'secondary'}
       />
     </div>
   );
