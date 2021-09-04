@@ -54,6 +54,7 @@ export default function LoginForm() {
           value={formik.values.email}
           label={types.input.email.label}
           className={classes.loginBtn}
+          variant={'primary'}
           autoFocus
         />
         {formik.touched.email && formik.errors.email ? (
@@ -67,17 +68,14 @@ export default function LoginForm() {
           onBlur={formik.handleBlur}
           value={formik.values.password}
           label={types.input.password.label}
-          autocomplete=""
+          variant={'primary'}
+          autocomplete=''
         />
         {formik.touched.password && formik.errors.password ? (
           <div className={classes.errorMessage}>{formik.errors.password}</div>
         ) : null}
 
-        <Button
-          type={types.button.type}
-          btnName={types.button.name}
-          className={classes.loginBtn}
-        />
+        <Button type={types.button.type} btnName={types.button.name} className={classes.loginBtn} />
       </form>
     </div>
   );
