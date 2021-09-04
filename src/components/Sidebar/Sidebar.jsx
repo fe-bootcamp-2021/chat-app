@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Settings from '../Settings/Settings';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import NewChatMenu from '../NewChatMenu/NewChatMenu';
 import Search from '../Search/Search';
@@ -11,6 +11,11 @@ import { getUser } from '../../services/user.services';
 
 function Sidebar() {
   const [toChat, setToChat] = useState([]);
+  const [isSettingOpen, setIsSettingOpen] = useState(false);
+
+  const handleSettingsClick = () => {
+    setIsSettingOpen(!isSettingOpen);
+  };
 
   useEffect(() => {
     getUser().then((res) => {
@@ -20,27 +25,31 @@ function Sidebar() {
 
   return (
     <>
-      <div className={classes.Sidebar}>
-        <div className={classes.sidebarHeader}>
-          <BurgerMenu />
-          <Search />
+      {isSettingOpen ? (
+        <Settings handleSettingsClick={handleSettingsClick} />
+      ) : (
+        <div className={classes.Sidebar}>
+          <div className={classes.sidebarHeader}>
+            <BurgerMenu handleSettingsClick={handleSettingsClick} />
+            <Search />
+          </div>
+          <div className={classes.sidebarContent}>
+            {toChat.map(({ avatar, name, surname, lastMessage, lastMessageDate }) => {
+              return (
+                <ToChatMenu
+                  key={idGen()}
+                  avatar={avatar}
+                  name={name}
+                  surname={surname}
+                  lastMessage={lastMessage}
+                  lastMessageDate={lastMessageDate}
+                />
+              );
+            })}
+          </div>
+          <NewChatMenu />
         </div>
-        <div className={classes.sidebarContent}>
-          {toChat.map(({ avatar, name, surname, lastMessage, lastMessageDate }) => {
-            return (
-              <ToChatMenu
-                key={idGen()}
-                avatar={avatar}
-                name={name}
-                surname={surname}
-                lastMessage={lastMessage}
-                lastMessageDate={lastMessageDate}
-              />
-            );
-          })}
-        </div>
-      </div>
-      <NewChatMenu />
+      )}
     </>
   );
 }
