@@ -17,7 +17,7 @@ function Settings({ handleSettingsClick }) {
   };
 
   return (
-    <div className={classes.settingsModal}>
+    <div className={classes.settings}>
       <div className={classes.settingsHeader}>
         <Button
           btnName={<Arrow />}
@@ -25,7 +25,7 @@ function Settings({ handleSettingsClick }) {
           onClick={handleSettingsClick}></Button>
         <Button btnName={<Logout />} onClick={handleSubmit}></Button>
       </div>
-      <div className={classes.settingsModalAbout}>
+      <div className={classes.settingsAbout}>
         <div className={classes.circle}></div>
         <div className={classes.fullName}>Name Surname</div>
         <div className={classes.email}>namesurname2000@gmail.com</div>
