@@ -57,6 +57,7 @@ function Register() {
           value={formik.values.name}
           label={types.input.name.label}
           className={classes.loginBtn}
+          variant={'primary'}
           autoFocus
         />
         {formik.touched.name && formik.errors.name ? (
@@ -70,6 +71,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.surname}
           label={types.input.surname.label}
+          variant={'primary'}
         />
         {formik.touched.surname && formik.errors.surname ? (
           <div className={classes.errorMessage}>{formik.errors.surname}</div>
@@ -82,6 +84,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.email}
           label={types.input.email.label}
+          variant={'primary'}
         />
         {formik.touched.email && formik.errors.email ? (
           <div className={classes.errorMessage}>{formik.errors.email}</div>
@@ -94,6 +97,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.password}
           label={types.input.password.label}
+          variant={'primary'}
           autocomplete=''
         />
         {formik.touched.password && formik.errors.password ? (
@@ -107,6 +111,7 @@ function Register() {
           onBlur={formik.handleBlur}
           value={formik.values.repeatPassword}
           label={types.input.repeatPassword.label}
+          variant={'primary'}
           autocomplete=''
         />
         {formik.touched.repeatPassword && formik.errors.repeatPassword ? (
