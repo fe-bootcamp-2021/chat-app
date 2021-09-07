@@ -15,3 +15,19 @@
   max-width: 500px;
   width: 100%;
 }
+
+.smileIcon {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  position: relative;
+}
+
+.smileMenu {
+  position: absolute;
+  top: -44vh;
+}
+
+.smileMenuClose {
+  display: none;
+}
