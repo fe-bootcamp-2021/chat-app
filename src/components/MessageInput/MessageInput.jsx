@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Picker from 'emoji-picker-react';
 import FileUpload from '../FileUpload/FileUpload';
 import SendMessage from '../SendMessage/SendMessage';
@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 import classes from './MessageInput.module.css';
 
 function MessageInput({ onSend }) {
-  const inputRef = createRef();
+  const inputRef = useRef();
   const [message, setMessage] = useState('');
   const [isEmojiOpen, setIsEmojiOpen] = useState(false);
   const [cursorPosition, setCursorPosition] = useState();
@@ -40,7 +40,7 @@ function MessageInput({ onSend }) {
         </div>
       </div>
       <input
-        type={types.input.message.typ}
+        type={types.input.message.type}
         placeholder={types.input.message.placeholder}
         className={classes.input}
         onChange={handleInputChange}
