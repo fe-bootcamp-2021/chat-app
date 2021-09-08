@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 
@@ -14,8 +13,6 @@ import { useAuth } from '../../hooks/useAuth.hook';
 import classes from './Register.module.css';
 
 function Register() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const { signup } = useAuth();
   const history = useHistory();
 

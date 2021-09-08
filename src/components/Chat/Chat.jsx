@@ -7,6 +7,7 @@ import messageTypes from '../../constants/messageTypes.constant';
 import getDateNow from '../../helpers/getDateNow.helper';
 import idGen from '../../helpers/idGenerator.helper';
 import getRightClick from '../../helpers/rightClick.helper'
+
 import classes from './Chat.module.css';
 
 function Chat() {

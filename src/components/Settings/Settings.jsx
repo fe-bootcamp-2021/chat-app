@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { Arrow, Logout, Pen } from '../Icons/icons';
 import Button from '../Button/Button';
 import NewChatMenuRow from '../NewChatMenuRow/NewChatMenuRow';
 import { useAuth } from '../../hooks/useAuth.hook';
-import { useHistory } from 'react-router-dom';
 import routes from '../../constants/routes.constant';
-import classes from './Settings.module.css';
 import EditProfile from '../EditProfile/EditProfile';
+
+import classes from './Settings.module.css';
 
 function Settings({ handleSettingsClick }) {
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);

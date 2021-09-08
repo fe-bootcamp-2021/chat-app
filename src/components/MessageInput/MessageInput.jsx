@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import Picker from 'emoji-picker-react';
+
 import FileUpload from '../FileUpload/FileUpload';
 import SendMessage from '../SendMessage/SendMessage';
 import { types } from '../../constants/formTypes.constant';
 import { Smile } from '../Icons/icons';
 import Button from '../Button/Button';
+
 import classes from './MessageInput.module.css';
 
 function MessageInput({ onSend }) {
