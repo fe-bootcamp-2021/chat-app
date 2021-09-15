@@ -7,6 +7,7 @@ import { types } from '../../constants/formTypes.constant';
 import classes from './MessageInput.module.css';
 
 function MessageInput() {
+  
   return (
     <div className={classes.messageInput}>
       <input
