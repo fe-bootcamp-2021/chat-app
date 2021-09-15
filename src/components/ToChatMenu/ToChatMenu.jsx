@@ -2,28 +2,26 @@ import React from "react";
 
 import classes from "./ToChatMenu.module.css";
 
-export default function ToChatMenu() {
+export default function ToChatMenu(props) {
+  const { avatar, name, surname, lastMessage, lastMessageDate } = props; //  destructuring props
+
   return (
     <>
       <div className={classes.toChatMenuWrapper}>
         <div className={classes.dialogAvatar}>
-          <div
-            className={classes.circle}
-          ></div>
+          <div className={classes.circle}></div>
         </div>
         <div className={classes.userCaption}>
           <div className={classes.dialogTitle}>
             <div className={classes.userTitle}>
-              <span>Karlen Nersisyan</span>
+              <span>{name + " " + surname}</span>
             </div>
             <div className={classes.dialogTitleDetails}>
-              <p>27.08.2021</p>
+              <p>{lastMessageDate}</p>
             </div>
           </div>
           <div className={classes.dialogSubTitle}>
-            <p>
-              Welcome our website!
-            </p>
+            <p>{lastMessage}</p>
           </div>
         </div>
       </div>

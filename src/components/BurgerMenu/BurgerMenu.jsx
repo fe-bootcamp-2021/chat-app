@@ -9,7 +9,7 @@ import { types } from '../../constants/formTypes.constant';
 
 import classes from './BurgerMenu.module.css';
 
-function BurgerMenu() {
+function BurgerMenu({ handleSettingsClick }) {
   const [isActive, setIsActive] = useState(false);
 
   const handleBtnClick = () => {
@@ -27,7 +27,11 @@ function BurgerMenu() {
       <div className={cn([classes.menuContent], { [classes.hide]: !isActive })}>
         <NewChatMenuRow rowContent={<Bookmark />} rowName={'Saved Messages'} />
         <NewChatMenuRow rowContent={<User />} rowName={'Contacts'} />
-        <NewChatMenuRow rowContent={<Settings />} rowName={'Settings'} />
+        <NewChatMenuRow
+          rowContent={<Settings />}
+          rowName={'Settings'}
+          onClick={handleSettingsClick}
+        />
         <NewChatMenuRow rowContent={<Moon />} rowName={'Dark Mode'} checkBox={AppleCheckbox()} />
         <NewChatMenuRow
           rowContent={<Animation />}

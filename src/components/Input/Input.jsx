@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import classes from "./Input.module.css";
+import classes from './Input.module.css';
 
 function Input(props) {
-
-  const { id, name, type, onChange, onBlur, value, label, autoFocus } = props   //  destructuring props
+  const { id, name, type, onChange, onBlur, value, label, autoFocus, variant } = props; //  destructuring props
 
   return (
     <div className={classes.inputField}>
@@ -16,7 +15,7 @@ function Input(props) {
         onChange={onChange}
         onBlur={onBlur}
         value={value}
-        className={classes.input}
+        className={variant === 'primary' ? classes.inputPrimary : classes.inputSecondary}
         required
         autoFocus={autoFocus}
       />

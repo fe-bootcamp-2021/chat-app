@@ -7,7 +7,7 @@ label {
   margin-top: 15px;
 }
 
-.input {
+.inputPrimary {
   border: 1px solid rgb(201, 200, 200);
   padding: 15px;
   border-radius: 10px;
@@ -22,9 +22,10 @@ label {
   transform: translate(16px, -60%);
   color: rgb(201, 200, 200);
   transition: all 300ms;
+  z-index: 1;
 }
 
-.input:focus + label {
+.inputPrimary:focus + label {
   font-size: var(--size-smallest);
   top: 2%;
   background: var(--white-color);
@@ -33,8 +34,8 @@ label {
   font-weight: var(--thickness-medium);
 }
 
-.input:focus ~ label,
-.input:valid ~ label {
+.inputPrimary:focus ~ label,
+.inputPrimary:valid ~ label {
   font-size: var(--size-smallest);
   top: 2%;
   background: var(--white-color);
@@ -43,11 +44,50 @@ label {
   font-weight: var(--thickness-medium);
   z-index: 1;
 }
-.input:focus,
-.input:valid {
+.inputPrimary:focus,
+.inputPrimary:valid {
   border: 1px solid var(--main-color);
 }
 
-.input:focus {
+.inputPrimary:focus {
   border: 1px solid var(--main-color);
+}
+
+/**/
+
+.inputSecondary {
+  border: 1px solid var(--muteGrey-color);
+  padding: 15px;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  color: var(--white-color);
+}
+
+.inputSecondary:focus + label {
+  font-size: var(--size-smallest);
+  top: 2%;
+  background: var(--white-color);
+  padding: 2px;
+  color: var(--purple-color);
+  font-weight: var(--thickness-medium);
+}
+
+.inputSecondary:focus ~ label,
+.inputSecondary:valid ~ label {
+  font-size: var(--size-smallest);
+  top: 2%;
+  background: var(--darkGrey-color);
+  padding: 2px;
+  color: var(--purple-color);
+  font-weight: var(--thickness-medium);
+  z-index: 1;
+}
+.inputSecondary:focus,
+.inputSecondary:valid {
+  border: 1px solid var(--purple-color);
+}
+
+.inputSecondary:focus {
+  border: 1px solid var(--purple-color);
 }
