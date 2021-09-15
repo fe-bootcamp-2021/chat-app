@@ -9,6 +9,10 @@ import Button from '../Button/Button';
 
 import classes from './MessageInput.module.css';
 
+<<<<<<< HEAD
+function MessageInput() {
+  
+=======
 function MessageInput({ onSend }) {
   const inputRef = useRef();
   const [message, setMessage] = useState('');
@@ -33,6 +37,7 @@ function MessageInput({ onSend }) {
     setMessage(e.target.value);
   };
 
+>>>>>>> be7e0d0f967ebedf74a75df3072620839e5f6bf6
   return (
     <div className={classes.messageInput}>
       <div className={classes.smileIcon}>
