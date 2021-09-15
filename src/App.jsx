@@ -2,6 +2,7 @@ import React from "react";
 import { lazy, Suspense } from "react";
 
 import { useAuth } from "./hooks/useAuth.hook";
+import LoadSpinner from "./components/LoadSpinner/LoadSpinner";
 const AuthenticatedApp = lazy(() =>
   import("./components/AuthenticatedApp/AuthenticatedApp")
 );
@@ -11,7 +12,6 @@ const UnAuthenticatedApp = lazy(() =>
 
 import "./root.css";
 import "./App.css";
-import LoadSpinner from "./components/LoadSpinner/LoadSpinner";
 
 export function App() {
   const { user } = useAuth();
